@@ -271,7 +271,7 @@ void KeyOpCore::keyboardInputLoop()
  */
 void KeyOpCore::remoteKeyInputReceived(const kobuki_msgs::KeyboardInput& key)
 {
-  processKeyboardInput(key.pressed_key);
+  processKeyboardInput(key.pressedKey);
 }
 
 /**
@@ -290,27 +290,27 @@ void KeyOpCore::processKeyboardInput(char c)
    */
   switch (c)
   {
-    case kobuki_msgs::KeyboardInput::KEYCODE_LEFT:
+    case kobuki_msgs::KeyboardInput::KeyCode_Left:
     {
       incrementAngularVelocity();
       break;
     }
-    case kobuki_msgs::KeyboardInput::KEYCODE_RIGHT:
+    case kobuki_msgs::KeyboardInput::KeyCode_Right:
     {
       decrementAngularVelocity();
       break;
     }
-    case kobuki_msgs::KeyboardInput::KEYCODE_UP:
+    case kobuki_msgs::KeyboardInput::KeyCode_Up:
     {
       incrementLinearVelocity();
       break;
     }
-    case kobuki_msgs::KeyboardInput::KEYCODE_DOWN:
+    case kobuki_msgs::KeyboardInput::KeyCode_Down:
     {
       decrementLinearVelocity();
       break;
     }
-    case kobuki_msgs::KeyboardInput::KEYCODE_SPACE:
+    case kobuki_msgs::KeyboardInput::KeyCode_Space:
     {
       resetVelocity();
       break;
